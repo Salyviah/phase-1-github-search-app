@@ -52,7 +52,7 @@ function displayUsers(users) {
 
 async function getUserRepositories(username) {
     const url = `https://api.github.com/users/${username}/repos`;
-    const resp = await fetch(url, {
+    const response = await fetch(url, {
         headers: {
             'Accept': 'application/vnd.github.v3+json'
         }
@@ -63,8 +63,8 @@ async function getUserRepositories(username) {
 
 function displayRepositories(repositories) {
     repoResults.innerHTML = '';
-    repositories.forEach(repository => {
-        const repositoryElement = document.createElement('div');
+    repos.forEach(repos => {
+        const repoElement = document.createElement('div');
         repoElement.innerHTML = `
             <div>
                 <a href="${repository.html_url}" target="_blank">${repo.full_name}</a>
